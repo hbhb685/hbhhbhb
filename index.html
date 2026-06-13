@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Content Director</title>
+    <title>Portfolio | Media Content Director & Designer</title>
     <!-- 폰트 및 아이콘 CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* --- 1. 변수 및 초기화 --- */
+        /* --- 1. 디자인 시스템 & 초기화 --- */
         :root {
-            --bg-color: #fffafb;
-            --text-main: #111111;
+            --bg-color: #fcf8f9;      /* 더 정돈된 소프트 오프화이트 */
+            --text-main: #1a1a1a;     /* 고급스러운 다크 그레이 */
             --text-sub: #666666;
-            --point-color: #ff8a9d; 
+            --text-muted: #888888;
+            --point-color: #ff8a9d;   /* 감성적인 시그니처 핑크 */
             --card-bg: #ffffff;
-            --border-color: #eee0e2;
+            --border-light: #f3eae3;  /* 미니멀한 라인용 */
         }
 
         * {
@@ -32,50 +33,48 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
+            line-height: 1.6;
         }
 
         a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
 
-        /* --- 2. 헤더 / 내비게이션 --- */
+        /* --- 2. 토폴로지 / 고해상도 내비게이션 --- */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 4rem;
-            background-color: rgba(255, 250, 251, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 1.5rem 5rem;
+            background-color: rgba(252, 248, 249, 0.75);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
         }
 
         header .logo {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 1.3rem;
+            letter-spacing: 0.5px;
         }
 
         header nav a {
-            margin-left: 2.5rem;
-            font-size: 0.95rem;
-            font-weight: 400;
-            transition: color 0.3s;
+            margin-left: 3rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-sub);
+            transition: color 0.3s ease;
         }
         header nav a:hover { color: var(--point-color); }
 
-        /* --- 3. 히어로 섹션 --- */
+        /* --- 3. 히어로 섹션 (미디어콘텐츠 디자이너 정체성 정의) --- */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0 4rem;
+            padding: 0 5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -84,17 +83,18 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: var(--point-color);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3.6rem;
             font-weight: 800;
-            line-height: 1.3;
-            margin-bottom: 1.5rem;
+            line-height: 1.35;
+            margin-bottom: 1.8rem;
+            letter-spacing: -1px;
         }
 
         .hero h1 span { color: var(--point-color); }
@@ -102,116 +102,119 @@
         .hero p {
             font-size: 1.2rem;
             color: var(--text-sub);
-            max-width: 600px;
+            max-width: 650px;
             font-weight: 300;
-            line-height: 1.8;
+            line-height: 1.85;
         }
 
-        /* --- 4. 공통 섹션 스타일 --- */
+        /* --- 4. 공통 섹션 컴포넌트 --- */
         section {
-            padding: 6rem 4rem;
+            padding: 8rem 5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .sec-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 800;
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
+            margin-bottom: 4rem;
+            letter-spacing: -0.5px;
+        }
+        .sec-title span {
+            color: var(--point-color);
         }
 
-        .sec-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 4px;
-            background-color: var(--point-color);
-        }
-
-        /* --- 5. 숏폼 비디오 섹션 (릴스 그리드) --- */
+        /* --- 5. 숏폼 비디오 섹션 (화장품 숏폼 기획력 강조) --- */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 3rem;
         }
 
         .video-card {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
         }
 
         .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(255, 138, 157, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(255, 138, 157, 0.12);
         }
 
         .video-thumb {
             width: 100%;
-            height: 480px; 
-            background-color: #e2d5d7;
+            height: 520px;
             position: relative;
             overflow: hidden;
+            background-color: #f0f0f0;
         }
 
         .video-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .video-card:hover .video-thumb img {
+            transform: scale(1.04);
         }
 
         .video-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.4); 
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(2px);
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 0; 
+            opacity: 0;
             transition: opacity 0.3s ease;
             z-index: 2;
         }
 
         .video-card:hover .video-overlay { opacity: 1; }
-        
-        .video-overlay i { 
-            color: #ffffff; 
-            font-size: 3.5rem; 
-            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
+        .video-overlay i { color: #fff; font-size: 3rem; }
+
+        .video-info { padding: 2rem; }
+        .video-info .meta-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--point-color);
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+            letter-spacing: 1px;
         }
+        .video-info h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.8rem; color: #111; }
+        .video-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; font-weight: 300; }
 
-        .video-info { padding: 1.5rem; }
-        .video-info h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #222; }
-        .video-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.5; }
-
-        /* --- 6. 굿즈 브랜딩 섹션 (mo.png, chi.png) --- */
+        /* --- 6. 굿즈 브랜딩 섹션 (시장조사 기반 브랜딩 특징 반영) --- */
         .design-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
         }
 
         .design-card {
             background: var(--card-bg);
-            border-radius: 24px;
+            border-radius: 28px;
             overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            transition: transform 0.4s ease, box-shadow 0.4s;
+        }
+
+        .design-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
         .design-img {
             width: 100%;
-            height: 380px;
-            background-color: #e2d5d7;
+            height: 400px;
             overflow: hidden;
         }
 
@@ -219,24 +222,24 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.6s ease;
         }
 
-        .design-card:hover .design-img img { transform: scale(1.03); }
+        .design-card:hover .design-img img { transform: scale(1.02); }
 
-        .design-info { padding: 1.8rem; }
+        .design-info { padding: 2rem; }
         .design-info .category {
             font-size: 0.8rem;
             color: var(--point-color);
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             letter-spacing: 1px;
         }
-        .design-info h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: #222; }
-        .design-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; }
+        .design-info h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.8rem; color: #111; }
+        .design-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.65; font-weight: 300; }
 
-        /* --- 7. 인포그래픽 섹션 (gpt info.png, gemini info.png) --- */
+        /* --- 7. 인포그래픽 포스터 섹션 (모던 카드 로우 타입) --- */
         .info-showcase {
             display: flex;
             flex-direction: column;
@@ -246,96 +249,91 @@
         .info-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
             background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 32px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+            padding: 3.5rem;
+            border-radius: 36px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.015);
         }
 
         .info-img-box {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 16px;
+            flex: 1.2;
+            min-width: 320px;
+            border-radius: 20px;
             overflow: hidden;
-            border: 1px solid #f0f0f0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
         }
 
-        .info-img-box.vertical { max-height: 600px; overflow-y: auto; }
+        .info-img-box.vertical { max-height: 550px; overflow-y: auto; }
         .info-img-box.horizontal { flex: 1.5; }
         .info-img-box img { width: 100%; height: auto; display: block; }
 
         .info-text-box { flex: 1; min-width: 300px; }
         .info-text-box .tag {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--point-color);
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
-        .info-text-box h3 { font-size: 1.6rem; margin-bottom: 1rem; color: #222; }
-        .info-text-box p { color: var(--text-sub); font-size: 1rem; line-height: 1.7; }
+        .info-text-box h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.2rem; color: #111; }
+        .info-text-box p { color: var(--text-sub); font-size: 0.95rem; line-height: 1.75; font-weight: 300; }
 
-        /* --- 8. 프로젝트 링크 섹션 (CTA 배너) --- */
+        /* --- 8. CTA 배너 섹션 --- */
         .cta-section {
-            background: linear-gradient(135deg, #111111 0%, #221a1b 100%);
+            background: #111111;
             color: #ffffff;
             text-align: center;
-            padding: 6rem 2rem;
+            padding: 6rem 3rem;
             border-radius: 40px;
             margin: 4rem auto;
-            max-width: 1120px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            max-width: 1100px;
         }
 
-        .cta-section h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; }
-        .cta-section p { color: #bbb; font-size: 1.1rem; margin-bottom: 2.5rem; font-weight: 300; }
+        .cta-section h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
+        .cta-section p { color: #999999; font-size: 1.05rem; margin-bottom: 2.5rem; font-weight: 300; }
 
         .cta-btn {
             display: inline-block;
             background-color: var(--point-color);
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1.1rem 3rem;
             border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1rem;
             transition: transform 0.3s, background-color 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 138, 157, 0.4);
         }
 
-        .cta-btn:hover {
-            transform: scale(1.05);
-            background-color: #e07385;
-        }
+        .cta-btn:hover { transform: scale(1.03); background-color: #e07385; }
 
         /* --- 9. 푸터 --- */
         footer {
             text-align: center;
-            padding: 4rem 2rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-sub);
-            font-size: 0.9rem;
+            padding: 5rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 300;
         }
-        footer p { margin-top: 0.5rem; }
+        footer p { margin-top: 0.4rem; }
 
-        /* --- 10. 반응형 미디어 쿼리 --- */
+        /* --- 10. 반응형 레이아웃 조정 --- */
         @media (max-width: 768px) {
-            header { padding: 1rem 2rem; }
+            header { padding: 1.2rem 2rem; }
             header nav { display: none; }
             .hero { padding: 0 2rem; }
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.4rem; }
             section { padding: 5rem 2rem; }
-            .info-row { padding: 1.5rem; gap: 1.5rem; }
+            .info-row { padding: 2rem; gap: 2rem; }
             .cta-section h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 헤더 -->
+    <!-- 헤더 내비게이션 -->
     <header>
         <div class="logo">PORTFOLIO.</div>
         <nav>
@@ -346,120 +344,130 @@
         </nav>
     </header>
 
-    <!-- 히어로 섹션 -->
+    <!-- 히어로 섹션: 미디어콘텐츠 디자이너 정체성 선언 -->
     <section class="hero">
-        <div class="tag">Content Director & Designer</div>
-        <h1>비주얼 기획부터 영상까지,<br>트렌디함을 만드는 <span>올라운더</span>입니다.</h1>
-        <p>기획, 숏폼 영상 제작, 인포그래픽 디자인, 브랜딩 굿즈 기획까지 소비자의 시선을 사로잡는 몰입감 있는 비주얼 콘텐츠를 빌드합니다.</p>
+        <div class="tag">Media Content Director & Designer</div>
+        <h1>감각적인 기획과 디자인으로<br>트렌디한 비주얼을 만드는 <span>올라운더</span>입니다.</h1>
+        <p>철저한 시장 조사와 브랜드 데이터 분석을 기반으로, 소비자 경험을 관통하는 영상 콘텐츠, 브랜딩 굿즈, 그리고 에디토리얼 인포그래픽 디자인을 일관된 무드로 설계합니다.</p>
     </section>
 
-    <!-- 숏폼 비디오 섹션 (스크린샷 대조 후 완벽 수정 완료 ✨) -->
+    <!-- 숏폼 비디오 섹션: 화장품 브랜드/제품 강점 극대화 -->
     <section id="shorts">
-        <h2 class="sec-title">Short-form Video</h2>
+        <h2 class="sec-title">Short-form Video <span>.</span></h2>
         <div class="video-grid">
             
-            <!-- 왼쪽 카드: SNS 아이콘 뭉치 이미지 -> 메디필 red.jpeg로 완벽 교체 -->
+            <!-- 왼쪽: 메디필 (red.jpeg) -->
             <a href="https://www.instagram.com/hx.xb1?igsh=MWJzOTdmMHQwbXR3NQ%3D%3D&utm_source=qr" target="_blank" class="video-card">
                 <div class="video-thumb">
-                    <img src="red.jpeg" alt="브랜드 홍보 숏폼 영상 디렉팅">
+                    <img src="red.jpeg" alt="메디필 락토 콜라겐 랩핑 마스크 숏폼 기획">
                     <div class="video-overlay">
                         <i class="fa-solid fa-play"></i>
                     </div>
                 </div>
                 <div class="video-info">
-                    <h3>브랜드 홍보 숏폼 영상 디렉팅</h3>
-                    <p>인스타그램 Reels / 기획, 촬영, 컷편집 및 사운드 믹싱</p>
+                    <div class="meta-tag">Commerce & Visualising</div>
+                    <h3>뷰티 브랜드 핵심 셀링포인트 극대화 숏폼</h3>
+                    <p>브랜드가 가진 고유의 고기능성 이미지와 제품의 가장 큰 특징인 '탄력 랩핑 텍스처'를 감각적인 초근접 매크로 컷과 임팩트 있는 비주얼 무드로 연출하여 제품의 소장 가치와 장점을 직관적으로 전달한 숏폼 콘텐츠입니다.</p>
                 </div>
             </a>
 
-            <!-- 오른쪽 카드: 마이크 이미지 -> 아누아 Peach.jpeg로 완벽 교체 -->
+            <!-- 오른쪽: 아누아 (Peach.jpeg) -->
             <a href="https://www.instagram.com/hx.xb1?igsh=MWJzOTdmMHQwbXR3NQ%3D%3D&utm_source=qr" target="_blank" class="video-card">
                 <div class="video-thumb">
-                    <img src="Peach.jpeg" alt="트렌디 사운드 비주얼라이징 콘텐츠">
+                    <img src="Peach.jpeg" alt="아누아 복숭아 세럼 감성 숏폼 디렉팅">
                     <div class="video-overlay">
                         <i class="fa-solid fa-play"></i>
                     </div>
                 </div>
                 <div class="video-info">
-                    <h3>트렌디 사운드 비주얼라이징 콘텐츠</h3>
-                    <p>인스타그램 Reels / 오디오 트렌드를 반영한 숏폼 아트워크</p>
+                    <div class="meta-tag">Branding & Sound Design</div>
+                    <h3>독자적 원료 특성을 살린 무드 리프레시 숏폼</h3>
+                    <p>아누아 브랜드 특유의 정갈하고 맑은 감성을 바탕으로, '복숭아 추출물'이라는 제품의 싱그러운 특징을 시각화했습니다. 탄탄한 사전 조사를 거쳐 트렌디한 오디오 소스와 유기적인 영상 속도를 설계해 브랜드 강점을 극대화했습니다.</p>
                 </div>
             </a>
             
         </div>
     </section>
 
-    <!-- 굿즈 브랜딩 섹션 -->
+    <!-- 굿즈 브랜딩 섹션: 시장조사 및 브랜드 아이덴티티 시각화 -->
     <section id="design">
-        <h2 class="sec-title">Merchandise & Branding</h2>
+        <h2 class="sec-title">Merchandise Design <span>.</span></h2>
         <div class="design-grid">
+            
+            <!-- 모찌의 하루 패키지 (mo.png) -->
             <div class="design-card">
                 <div class="design-img">
-                    <img src="mo.png" alt="모찌의 하루 오피셜 패키지">
+                    <img src="mo.png" alt="모찌의 하루 브랜드 패키징 기획">
                 </div>
                 <div class="design-info">
-                    <div class="category">Package & Branding</div>
-                    <h3>모찌의 하루 브랜딩 및 오피셜 패키지 기획</h3>
-                    <p>브랜드 고유의 따뜻하고 말랑한 감성을 정갈하게 담아낸 패키징 기획입니다. 매장의 비주얼 정체성을 일관되게 보여주는 세트 구성과 스티커 디자인을 조화롭게 매칭했습니다.</p>
+                    <div class="category">Brand Package Design</div>
+                    <h3>시장 조사를 바탕으로 한 아이덴티티 패키징</h3>
+                    <p>F&B 시장 트렌드 조사와 타겟 소비자 분석을 선행하여 브랜드 고유의 말랑하고 따뜻한 시그니처 무드를 패키지에 투영했습니다. 매장의 감성을 일관되게 보여주는 세트 구성과 그래픽 매칭으로 브랜드 정체성을 탄탄하게 구축했습니다.</p>
                 </div>
             </div>
 
+            <!-- 모찌 말랑이 (chi.png) -->
             <div class="design-card">
                 <div class="design-img">
-                    <img src="chi.png" alt="모찌 말랑이 촉감 시각화">
+                    <img src="chi.png" alt="모찌 말랑이 커스텀 굿즈">
                 </div>
                 <div class="design-info">
-                    <div class="category">Merchandise Design</div>
-                    <h3>시그니처 모찌 말랑이 굿즈 개발</h3>
-                    <p>실제 생과일 모찌의 쫀득하고 폭신한 촉감을 피젯 토이(말랑이) 형태로 시각화한 굿즈 기획입니다. 소비자의 스트레스 해소와 소장 가치를 유도하는 직관적인 연출 컷을 구성했습니다.</p>
+                    <div class="category">Merchandise Strategy</div>
+                    <h3>소비자 경험 기반 시그니처 피젯 굿즈 기획</h3>
+                    <p>생과일 모찌의 쫀득한 촉감이라는 차별화된 특징을 유저 리서치 데이터와 연결하여 '피젯 토이(말랑이)' 굿즈로 치환해 낸 프로젝트입니다. 소비자의 소장 욕구를 자극하는 브랜드 경험의 연장선을 성공적으로 구현했습니다.</p>
                 </div>
             </div>
+            
         </div>
     </section>
 
-    <!-- 인포그래픽 포스터 섹션 -->
+    <!-- 인포그래픽 포스터 섹션: 복잡한 정보를 감성적 에디토리얼로 재구성 -->
     <section id="infographic">
-        <h2 class="sec-title">Infographic Poster</h2>
+        <h2 class="sec-title">Infographic Poster <span>.</span></h2>
         <div class="info-showcase">
+            
+            <!-- gpt info.png -->
             <div class="info-row">
                 <div class="info-img-box vertical">
-                    <img src="gpt info.png" alt="모찌 말랑이 상세 인포그래픽">
+                    <img src="gpt info.png" alt="제품 상세 안내 인포그래픽">
                 </div>
                 <div class="info-text-box">
-                    <div class="tag">Editorial & Information Design</div>
-                    <h3>모찌 말랑이 기능성 상세 인포그래픽 포스터</h3>
-                    <p>제품의 촉감 정보, 놀이 방법, 주의사항 등 텍스트 중심의 복잡한 가이드를 감성적이고 체계적인 레이아웃으로 시각화했습니다. 브랜드 무드에 맞는 컬러칩 사용과 픽토그램 가독성을 정밀하게 조율했습니다.</p>
+                    <div class="tag">Editorial Information Design</div>
+                    <h3>데이터 시각화 기법을 적용한 정보 가이드 포스터</h3>
+                    <p>정보 전달 순서와 소비자 인지 심리를 철저하게 계산하여 기획한 인포그래픽입니다. 자칫 지루해질 수 있는 매뉴얼 데이터를 감각적인 컬러 구성과 가독성 높은 레이아웃 시스템으로 시각화하여, 가이드 본연의 정보성과 심미적 무드를 동시에 만족시켰습니다.</p>
                 </div>
             </div>
 
+            <!-- gemini info.png -->
             <div class="info-row" style="flex-direction: row-reverse;">
                 <div class="info-img-box horizontal">
-                    <img src="gemini info.png" alt="달달한 일상 웹툰 가이드">
+                    <img src="gemini info.png" alt="스토리텔링 가이드 포스터">
                 </div>
                 <div class="info-text-box">
-                    <div class="tag">Storytelling & Illustration</div>
-                    <h3>'달달한 일상' 스토리텔링 브랜딩 가이드</h3>
-                    <p>소비자가 굿즈를 구매하고 공유하는 전체 경험 패스를 5단계 일러스트 스토리를 통해 위트 있게 풀어낸 인포그래픽입니다. 친근한 캐릭터 컷 연출을 통해 브랜드 정체성을 확장한 크리에이티브 결과물입니다.</p>
+                    <div class="tag">Visual Storytelling Layout</div>
+                    <h3>브랜드 서사를 담아낸 캐릭터 스토리 가이드</h3>
+                    <p>소비자의 브랜드 접점과 구매 이후의 확산 프로세스를 철저한 분석 기반의 5단계 일러스트 스토리로 구조화했습니다. 글로벌 확장을 고려한 직관적인 픽토그램 설계와 세련된 영문 에디토리얼 조합을 통해 브랜드가 가진 트렌디한 위트를 완벽하게 시각화했습니다.</p>
                 </div>
             </div>
+            
         </div>
     </section>
 
     <!-- 프로젝트 랜딩페이지 연결 (CTA) -->
-    <section id="project" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <section id="project" style="padding-top: 1rem; padding-bottom: 2rem;">
         <div class="cta-section">
             <h2>Live Project Showcase</h2>
-            <p>기획부터 최종 웹 오픈까지 아우르는 통합 프로젝트 런칭 케이스</p>
+            <p>비주얼 기획부터 개발 연동까지 총괄한 라이브 프로젝트 웹 빌드 케이스</p>
             <a href="https://mochii1.aiapp.link/" target="_blank" class="cta-btn">
-                홍보 랜딩페이지 보러가기 <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i>
+                Launch Project <i class="fa-solid fa-arrow-right" style="margin-left: 10px; font-size: 0.9rem;"></i>
             </a>
         </div>
     </section>
 
     <!-- 푸터 -->
     <footer>
-        <p>© 2026 Content Director Portfolio. Powered by GitHub Codespaces</p>
-        <p>Contact: 인스타그램 프로필 DM 및 랜딩페이지 문의망 채널 활용</p>
+        <p>© 2026 Media Content Director & Designer Portfolio. Powered by GitHub Codespaces</p>
+        <p>Contact: 인스타그램 프로필 DM 및 프로젝트 채널 활용</p>
     </footer>
 
 </body>
