@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Content Director</title>
-    <!-- 폰트 및 아이콘 CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
@@ -138,8 +137,8 @@
         /* --- 5. 숏폼 비디오 섹션 (릴스 그리드) --- */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .video-card {
@@ -158,7 +157,7 @@
 
         .video-thumb {
             width: 100%;
-            height: 420px;
+            height: 480px; /* 숏폼/릴스 비율 최적화 */
             background-color: #e2d5d7;
             position: relative;
             overflow: hidden;
@@ -175,8 +174,10 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.4);
             display: flex;
-            justify-content: center;
+            justify(content): center;
             align-items: center;
+            display: flex;
+            justify-content: center;
             opacity: 0;
             transition: opacity 0.3s;
         }
@@ -185,8 +186,8 @@
         .video-overlay i { color: #fff; font-size: 3rem; }
 
         .video-info { padding: 1.5rem; }
-        .video-info h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .video-info p { font-size: 0.9rem; color: var(--text-sub); }
+        .video-info h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #222; }
+        .video-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.5; }
 
         /* --- 6. 굿즈 브랜딩 섹션 (mo.png, chi.png) --- */
         .design-grid {
@@ -233,7 +234,7 @@
         .design-info h3 { font-size: 1.3rem; margin-bottom: 0.8rem; color: #222; }
         .design-info p { font-size: 0.95rem; color: var(--text-sub); line-height: 1.6; }
 
-        /* --- 7. 인포그래픽 신설 섹션 (gpt info.png, gemini info.png) --- */
+        /* --- 7. 인포그래픽 섹션 (gpt info.png, gemini info.png) --- */
         .info-showcase {
             display: flex;
             flex-direction: column;
@@ -252,23 +253,21 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.01);
         }
 
-        /* 세로형 인포그래픽 스케일 제어 */
-        .info-img-box.vertical {
+        .info-img-box {
             flex: 1;
             min-width: 300px;
-            max-height: 600px;
-            overflow-y: auto; /* 세로가 긴 이미지를 부드럽게 스크롤할 수 있도록 배려 */
-            border-radius: 16px;
-            border: 1px solid #f0f0f0;
-        }
-
-        /* 가로형 일러스트 인포그래픽 제어 */
-        .info-img-box.horizontal {
-            flex: 1.5;
-            min-width: 350px;
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid #f0f0f0;
+        }
+
+        .info-img-box.vertical {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .info-img-box.horizontal {
+            flex: 1.5;
         }
 
         .info-img-box img {
@@ -368,7 +367,6 @@
 </head>
 <body>
 
-    <!-- 헤더 -->
     <header>
         <div class="logo">PORTFOLIO.</div>
         <nav>
@@ -379,46 +377,45 @@
         </nav>
     </header>
 
-    <!-- 히어로 섹션 -->
     <section class="hero">
         <div class="tag">Content Director & Designer</div>
         <h1>비주얼 기획부터 영상까지,<br>트렌디함을 만드는 <span>올라운더</span>입니다.</h1>
         <p>기획, 숏폼 영상 제작, 인포그래픽 디자인, 브랜딩 굿즈 기획까지 소비자의 시선을 사로잡는 몰입감 있는 비주얼 콘텐츠를 빌드합니다.</p>
     </section>
 
-    <!-- 숏폼 비디오 섹션 -->
     <section id="shorts">
         <h2 class="sec-title">Short-form Video</h2>
         <div class="video-grid">
+            
             <a href="https://www.instagram.com/hx.xb1?igsh=MWJzOTdmMHQwbXR3NQ%3D%3D&utm_source=qr" target="_blank" class="video-card">
                 <div class="video-thumb">
-                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=400&q=80" alt="릴스 썸네일 1">
+                    <img src="red.jpeg" alt="메디필 락토 콜라겐 랩핑 마스크 홍보">
                     <div class="video-overlay">
                         <i class="fa-solid fa-play"></i>
                     </div>
                 </div>
                 <div class="video-info">
-                    <h3>브랜드 홍보 숏폼 영상 디렉팅</h3>
-                    <p>인스타그램 Reels / 기획, 촬영, 컷편집 및 사운드 믹싱</p>
+                    <h3>뷰티 브랜드 숏폼 커머스 비주얼라이징</h3>
+                    <p>인스타그램 Reels / 텍스처의 직관적인 무드 전달을 위한 컷 구성 및 고발색 임팩트 타이포그래피 모션 연출</p>
                 </div>
             </a>
 
             <a href="https://www.instagram.com/hx.xb1?igsh=MWJzOTdmMHQwbXR3NQ%3D%3D&utm_source=qr" target="_blank" class="video-card">
                 <div class="video-thumb">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80" alt="릴스 썸네일 2">
+                    <img src="Peach.jpeg" alt="아누아 복숭아 세럼 감성 숏폼">
                     <div class="video-overlay">
                         <i class="fa-solid fa-play"></i>
                     </div>
                 </div>
                 <div class="video-info">
-                    <h3>트렌디 사운드 비주얼라이징 콘텐츠</h3>
-                    <p>인스타그램 Reels / 오디오 트렌드를 반영한 숏폼 아트워크</p>
+                    <h3>시네마틱 감성 브랜딩 숏폼 디렉팅</h3>
+                    <p>인스타그램 Reels / 청량하고 화사한 오브제 연출, 자연광 기반의 톤앤매너 설정 및 사운드 스크립트 믹싱</p>
                 </div>
             </a>
+            
         </div>
     </section>
 
-    <!-- 굿즈 브랜딩 섹션 -->
     <section id="design">
         <h2 class="sec-title">Merchandise & Branding</h2>
         <div class="design-grid">
@@ -446,12 +443,9 @@
         </div>
     </section>
 
-    <!-- 💡 인포그래픽 포스터 신설 섹션 (gpt info.png, gemini info.png 매칭) -->
     <section id="infographic">
         <h2 class="sec-title">Infographic Poster</h2>
         <div class="info-showcase">
-            
-            <!-- 첫 번째: gpt info.png 적용 -->
             <div class="info-row">
                 <div class="info-img-box vertical">
                     <img src="gpt info.png" alt="모찌 말랑이 상세 인포그래픽">
@@ -459,32 +453,23 @@
                 <div class="info-text-box">
                     <div class="tag">Editorial & Information Design</div>
                     <h3>모찌 말랑이 기능성 상세 인포그래픽 포스터</h3>
-                    <p>
-                        제품의 촉감 정보, 놀이 방법, 주의사항 등 텍스트 중심의 복잡한 커머스 가이드를 감성적이고 체계적인 레이아웃으로 시각화했습니다. 
-                        브랜드 무드에 맞는 소프트 톤의 컬러칩 사용과 픽토그램 가독성을 정밀하게 조율하여 구매 전환을 돕는 커뮤니케이션 디자인을 완성했습니다.
-                    </p>
+                    <p>제품의 촉감 정보, 놀이 방법, 주의사항 등 텍스트 중심의 복잡한 가이드를 감성적이고 체계적인 레이아웃으로 시각화했습니다. 브랜드 무드에 맞는 컬러칩 사용과 픽토그램 가독성을 정밀하게 조율했습니다.</p>
                 </div>
             </div>
 
-            <!-- 두 번째: gemini info.png 적용 -->
-            <div class="info-row" style="flex-direction: row-reverse;"> <!-- 모던한 배치를 위해 레이아웃 반전 -->
+            <div class="info-row" style="flex-direction: row-reverse;">
                 <div class="info-img-box horizontal">
                     <img src="gemini info.png" alt="달달한 일상 웹툰 가이드">
                 </div>
                 <div class="info-text-box">
                     <div class="tag">Storytelling & Illustration</div>
                     <h3>'달달한 일상' 스토리텔링 브랜딩 가이드</h3>
-                    <p>
-                        소비자가 굿즈를 구매하고 공유하는 전체 경험 패스를 5단계 일러스트 스토리를 통해 위트 있게 풀어낸 인포그래픽입니다. 
-                        글로벌 타겟을 고려한 영문 가이드 병기와 친근한 캐릭터 컷 연출을 통해 브랜드 정체성을 확장하는 크리에이티브 결과물입니다.
-                    </p>
+                    <p>소비자가 굿즈를 구매하고 공유하는 전체 경험 패스를 5단계 일러스트 스토리를 통해 위트 있게 풀어낸 인포그래픽입니다. 친근한 캐릭터 컷 연출을 통해 브랜드 정체성을 확장한 크리에이티브 결과물입니다.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- 프로젝트 랜딩페이지 연결 (CTA) -->
     <section id="project" style="padding-top: 2rem; padding-bottom: 2rem;">
         <div class="cta-section">
             <h2>Live Project Showcase</h2>
@@ -495,7 +480,6 @@
         </div>
     </section>
 
-    <!-- 푸터 -->
     <footer>
         <p>© 2026 Content Director Portfolio. Powered by GitHub Codespaces</p>
         <p>Contact: 인스타그램 프로필 DM 및 랜딩페이지 문의망 채널 활용</p>
